@@ -48,7 +48,15 @@ for i = 1:length(patdir)
 end
 
 disp('Conversion to BIDS format completed.');
-
+% Helper function to move and rename files
+% This function moves a file from the source directory to the destination directory
+% and renames it according to the BIDS specification.
+% 
+% Parameters:
+% src_dir  - Source directory where the file is currently located
+% src_file - Name of the file to be moved
+% dest_dir - Destination directory where the file should be moved
+% dest_file- New name of the file after moving
 % Helper function to move and rename files
 function move_and_rename(src_dir, src_file, dest_dir, dest_file)
     if ~exist(dest_dir, 'dir')
